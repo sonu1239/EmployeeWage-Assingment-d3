@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace EmployeeWage72
 {
-    //part timr employee wage and full time employee wage
+   
     class Computation
     { 
         //constant
-        public const int IS_FullTime = 1;
-        public const int EMP_RET_PR_HR = 50;
+        public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
+        public const int EMP_RET_PR_HR = 50;
+        
+        
         static void Main(string[] args)
         {
             //local ver
@@ -22,23 +24,21 @@ namespace EmployeeWage72
 
             //using next() methad to genret rondom input out 0,1
             int empInput = random.Next(0, 3);
-            //if_ese programing constact
-            if (IS_FullTime == empInput)
+            //switch cash  programing constact
+            switch (empInput)
             {
-                Console.WriteLine("Full time Employee is prsent");
-                empHrs = 8;
-            }
-            else if (IS_PART_TIME == empInput)
-            {
-                Console.WriteLine("part time employee is prsent");
-                empHrs = 4;
-            } 
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
 
-              else
-            {
-                Console.WriteLine("Employee is absent ");
-                empHrs = 0;
-            }
+                default:
+                    empHrs = 0;
+                    break;
+            } 
+             // formula for calculating emp wage
             empWage = EMP_RET_PR_HR * empHrs;
                Console.WriteLine("Employee Wage {0}" , empWage);
                Console.ReadLine();
