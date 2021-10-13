@@ -14,7 +14,7 @@ namespace EmployeeWage72
         public const int EMP_RATE_PER_HRS = 20;
         public const int NUM_OF_WORK_DAYS = 2;
         public const int MAX_HRS_IN_MONTH = 10;
-        public static void EmpWage()
+        public static void EmpWage(String company, int Emp_Rate_Per_Hrs, int Num_Of_Work_Days, int MaxHrsInMonth)
         {
             int empHrs = 0, totalWorkDays = 0;
             int totalEmpHrs = 0;
@@ -44,8 +44,9 @@ namespace EmployeeWage72
 
         public static void Main(String[] args)
         {
-            EmpWage();
-
+            EmpWage("Google", 1, 2, 3);
+            EmpWage("Reliance", 12, 50, 9);
+            EmpWage("Mahindra", 15, 5, 25);
         }
     }
 }
